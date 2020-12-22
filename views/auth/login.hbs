@@ -1,0 +1,57 @@
+<div class="auth">
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s6"><a href="#login">Login</a></li>
+                <li class="tab col s6"><a class="active" href="#register">Register</a></li>
+
+            </ul>
+        </div>
+        <div id="login" class="col s6 offset-s3">
+            <h1>Login Page</h1>
+            {{#if loginError}}
+            <p>{{loginError}}</p>
+            {{/if}}
+            <form action="/auth/login" method="POST" novalidate>
+
+                <div class="input-field">
+                    <input id="email" type="email" class="validate" name="email" required>
+                    <label class="active" for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <input id="password" type="password" class="validate" name="password" required>
+                    <label class="active" for="password">Password</label>
+                </div>
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+                <button class="btn btn-primary">Login</button>
+            </form>
+        </div>
+        <div id="register" class="col s6 offset-s3">
+            <h1>Registration Page</h1>
+            {{#if registerError}}
+            <p>{{registerError}}</p>
+            {{/if}}
+            <form action="/auth/register" method="POST" novalidate>
+
+                <div class="input-field">
+                    <input id="emailReg" type="email" class="validate" name="email" required>
+                    <label class="active" for="emailReg">Email</label>
+                </div>
+                <div class="input-field">
+                    <input id="namen" type="text" class="validate" name="name" required>
+                    <label class="active" for="namen">Name</label>
+                </div>
+                <div class="input-field">
+                    <input id="rpassword" type="password" class="validate" name="password" required>
+                    <label class="active" for="rpassword">Password</label>
+                </div>
+                <div class="input-field">
+                    <input id="confirm" type="password" class="validate" name="confirmPassword" required>
+                    <label class="active" for="confirm">Confirm Password</label>
+                </div>
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+                <button class="btn btn-primary">Registration</button>
+            </form>
+        </div>
+    </div>
+</div>

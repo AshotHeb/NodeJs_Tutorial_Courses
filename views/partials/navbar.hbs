@@ -1,0 +1,66 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isHome}}
+            <li class="active"><a href="/">Home Page</a></li>
+            {{else}}
+            <li><a href="/">Home Page</a></li>
+            {{/if}}
+
+            {{#if isCourses}}
+            <li class="active"> <a href="/courses">Courses</a></li>
+            {{else}}
+            <li> <a href="/courses">Courses</a></li>
+            {{/if}}
+
+
+            {{#if isAuth}}
+
+
+            {{#if isProfile}}
+            <li class="active"><a href="/profile">Profile</a></li>
+            {{else}}
+            <li><a href="/profile">Profile</a></li>
+            {{/if}}
+
+            {{#if isAddCourse}}
+            <li class="active"><a href="/addcourse">Add Course</a></li>
+            {{else}}
+            <li><a href="/addcourse">Add Course</a></li>
+            {{/if}}
+
+            {{#if isCard}}
+            <li class="active"><a href="/card">Card</a></li>
+            {{else}}
+            <li><a href="/card">Card</a></li>
+            {{/if}}
+
+            {{#if isOrders}}
+            <li class="active"><a href="/orders">Orders</a></li>
+            {{else}}
+            <li><a href="/orders">Orders</a></li>
+            {{/if}}
+            <li><a href="/auth/logout">Logout</a></li>
+
+
+            {{else}}
+
+            {{#if isAuthPage}}
+            <li class="active"><a href="/auth/login#login">Auth</a></li>
+            {{else}}
+            <li><a href="/auth/login#login">Auth</a></li>
+            {{/if}}
+
+
+
+
+            {{/if}}
+
+
+
+
+
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Edit {{course.title}} Course</h1>
+
+    <form action="/courses/edit" method="POST">
+
+        <div class="input-field">
+            <input id="title" type="text" class="validate" name="title" value="{{course.title}}">
+            <label class="active" for="title">Course Name</label>
+        </div>
+        <div class="input-field">
+            <input id="price" type="text" class="validate" name="price" value="{{course.price}}">
+            <label class="active" for="price">Course Price</label>
+        </div>
+        <div class="input-field">
+            <input id="imgUrl" type="text" class="validate" name="url" value="{{course.url}}">
+            <label class="active" for="imgUrl">Img Url</label>
+        </div>
+        <input type="hidden" value="{{course.id}}" name="id">
+        <input type="hidden" name="_csrf" value={{csrf}}>
+        <button class="btn btn-primary">Edit Course</button>
+    </form>
+    <form action="/courses/remove" method="POST" class="deletCourse">
+        <input type="hidden" name="_csrf" value={{csrf}}>
+        <input type="hidden" name="id" value="{{course.id}}">
+        <button class="btn red">DELETE</button>
+    </form>
+
+</div>

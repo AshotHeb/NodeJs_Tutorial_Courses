@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Add Course</h1>
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}}
+    <form action="/addcourse" method="POST">
+
+        <div class="input-field">
+            <input id="title" type="text" class="validate" name="title" value={{data.title}}>
+            <label class="active" for="title">Course Name</label>
+        </div>
+        <div class="input-field">
+            <input id="price" type="text" class="validate" name="price" value={{data.price}}>
+            <label class="active" for="price">Course Price</label>
+        </div>
+        <div class="input-field">
+            <input id="imgUrl" type="text" class="validate" name="url" value={{data.url}}>
+            <label class="active" for="imgUrl">Img Url</label>
+        </div>
+        <input type="hidden" name="_csrf" value={{csrf}}>
+        <button class="btn btn-primary">Add Course</button>
+    </form>
+</div>

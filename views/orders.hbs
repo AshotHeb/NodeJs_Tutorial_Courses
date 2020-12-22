@@ -1,0 +1,25 @@
+<h1>Orders Page</h1>
+
+
+{{#if orders.length}}
+{{#each orders}}
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Order : {{_id}}</span>
+                <p>{{user.name}}</p>
+            </div>
+            <ol>
+                {{#each courses}}
+                <li> {{course.title}}  &nbsp;&nbsp;   price:{{course.price}}   &nbsp;&nbsp;  count:{{count}}</li>
+                {{/each}}
+            </ol>
+            <p class="price">{{price}}</p>
+        </div>
+    </div>
+</div>
+{{/each}}
+{{else}}
+<p>No Orders</p>
+{{/if}}
